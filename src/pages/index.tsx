@@ -16,13 +16,14 @@ export default function Home(): JSX.Element {
         }}>
         <section style={{maxWidth: '1100px', margin: '0 auto'}}>
           <img
-  src="/img/opsflow-logo.png"
-  alt="OpsFlow Logo"
-  style={{
-    width: '360px',
-    marginBottom: '24px',
-  }}
-/>
+            src="/img/opsflow-logo.png"
+            alt="OpsFlow Logo"
+            style={{
+              width: '400px',
+              marginBottom: '28px',
+            }}
+          />
+
           <p
             style={{
               color: '#c9a24d',
@@ -63,7 +64,7 @@ export default function Home(): JSX.Element {
               flexWrap: 'wrap',
             }}>
             <Link
-              to="/introduction/welcome"
+              to="/docs/introduction/welcome"
               style={{
                 background: '#c9a24d',
                 color: '#11100d',
@@ -76,7 +77,7 @@ export default function Home(): JSX.Element {
             </Link>
 
             <Link
-              to="/introduction/welcome"
+              to="/docs/introduction/welcome"
               style={{
                 border: '1px solid #c9a24d',
                 color: '#f5efe3',
@@ -133,12 +134,7 @@ export default function Home(): JSX.Element {
                   flexDirection: 'column',
                   gap: '12px',
                 }}>
-                <h2
-                  style={{
-                    fontSize: '22px',
-                    margin: 0,
-                    lineHeight: 1.2,
-                  }}>
+                <h2 style={{fontSize: '22px', margin: 0, lineHeight: 1.2}}>
                   {title}
                 </h2>
 
@@ -186,11 +182,7 @@ export default function Home(): JSX.Element {
                   {stat}
                 </div>
 
-                <div
-                  style={{
-                    color: '#d8cfbd',
-                    fontSize: '16px',
-                  }}>
+                <div style={{color: '#d8cfbd', fontSize: '16px'}}>
                   {label}
                 </div>
               </div>
