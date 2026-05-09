@@ -1,0 +1,98 @@
+:root {
+  --ifm-color-primary: #d4aa57;
+  --ifm-background-color: #11100d;
+  --ifm-navbar-background-color: rgba(17, 16, 13, 0.9);
+  --ifm-footer-background-color: #11100d;
+
+  --ifm-font-color-base: #f5efe3;
+  --ifm-heading-color: #ffffff;
+
+  --ifm-link-color: #d4aa57;
+
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: Inter, system-ui, sans-serif;
+  --ifm-heading-font-family: Inter, system-ui, sans-serif;
+
+  --ifm-global-radius: 14px;
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #11100d;
+  --ifm-navbar-background-color: rgba(17, 16, 13, 0.9);
+  --ifm-footer-background-color: #11100d;
+
+  --ifm-font-color-base: #f5efe3;
+  --ifm-heading-color: #ffffff;
+}
+
+body {
+  background: #11100d;
+}
+
+.navbar {
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #2c271f;
+}
+
+.footer {
+  border-top: 1px solid #2c271f;
+}
+
+.menu {
+  font-size: 15px;
+  padding-top: 12px;
+}
+
+.menu__link {
+  border-radius: 10px;
+}
+
+.menu__link:hover {
+  background: rgba(212, 170, 87, 0.08);
+}
+
+.menu__link--active {
+  color: #d4aa57 !important;
+  background: rgba(212, 170, 87, 0.12);
+}
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid #2c271f !important;
+}
+
+.theme-doc-markdown {
+  max-width: 860px;
+}
+
+.theme-doc-markdown h1 {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.theme-doc-markdown h2 {
+  margin-top: 48px;
+  font-size: 30px;
+}
+
+.theme-doc-markdown p,
+.theme-doc-markdown li {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+table {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead {
+  background: #1b1813;
+}
+
+code {
+  border-radius: 6px;
+}
+
+.alert {
+  border-radius: 12px;
+}
