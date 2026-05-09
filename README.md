@@ -1,3 +1,5 @@
+<img width="600" height="300" alt="OpsFlow LOGO" src="https://github.com/user-attachments/assets/f007bd18-3ffd-49a0-971e-372c7b34e932" />
+
 # OpsFlow SaaS Documentation Platform
 
 Enterprise workforce operations documentation platform built with Docusaurus, TypeScript, React, and Mermaid workflow visualization.
