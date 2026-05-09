@@ -63,7 +63,7 @@ export default function Home(): JSX.Element {
               flexWrap: 'wrap',
             }}>
             <Link
-              to="/docs/introduction/welcome"
+              to="/introduction/welcome"
               style={{
                 background: '#c9a24d',
                 color: '#11100d',
@@ -76,7 +76,7 @@ export default function Home(): JSX.Element {
             </Link>
 
             <Link
-              to="/docs/introduction/welcome"
+              to="/introduction/welcome"
               style={{
                 border: '1px solid #c9a24d',
                 color: '#f5efe3',
