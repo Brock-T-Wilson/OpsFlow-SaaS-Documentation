@@ -1,47 +1,99 @@
-# Version 1.0
+---
+title: Version 1.0 Release Notes
+---
 
-Release Date: May 2026
+# Version 1.0 Release Notes
 
-## Initial Platform Release
+Release Date: January 2026
 
-OpsFlow version 1.0 introduces the initial enterprise operations platform release.
+OpsFlow Version 1.0 introduces the initial enterprise workforce operations platform release, including incident management, workflow automation, workforce scheduling, and operational reporting capabilities.
 
-## Included Features
+---
 
-### Workforce Operations
+## New Features
 
-- shift scheduling
-- work order management
-- department assignments
-- staffing visibility
+### Incident Reporting System
 
-### Incident Management
+- Configurable incident severity levels
+- Escalation routing workflows
+- Corrective action tracking
+- Supervisor review workflows
+- Audit log generation
 
-- incident reporting
-- escalation workflows
-- severity tracking
-- audit logging
+### Workforce Scheduling
 
-### Administration
+- Shift scheduling management
+- Staffing coverage visibility
+- Schedule conflict detection
+- Department scheduling controls
 
-- role-based permissions
-- MFA configuration
-- security policies
-- user management
+### Workflow Automation
+
+- Approval workflow configuration
+- Escalation rule management
+- Notification automation
+- Workflow activity logging
+
+### Administrative Controls
+
+- Role-based access control
+- MFA configuration support
+- Security policy enforcement
+- User provisioning management
 
 ### API Platform
 
-- bearer token authentication
-- work order endpoints
-- incident reporting APIs
-- standardized error handling
+- REST API authentication
+- Incident creation endpoints
+- Work order retrieval endpoints
+- Standardized error handling
+- API rate limiting support
 
-## Known Limitations
+---
 
-- Limited dashboard customization
-- PDF exports may timeout for large reports
+## Security Enhancements
+
+- MFA enforcement support
+- Session timeout controls
+- Login audit tracking
+- Administrator permission restrictions
+- Audit log visibility improvements
+
+---
+
+## Performance Improvements
+
+- Faster dashboard loading times
+- Optimized incident retrieval queries
+- Improved notification delivery performance
+- Reduced workflow execution delays
+
+---
+
+## Known Issues
+
+| Issue | Status |
+|---|---|
+| Delayed notification delivery during peak usage | Monitoring |
+| Large report exports may experience timeout delays | Investigating |
+| Mobile dashboard rendering inconsistencies | Scheduled for Version 1.1 |
+
+---
+
+## Upgrade Notes
+
+Organizations upgrading from internal beta environments should verify:
+
+- Administrator role mappings
+- Notification configuration settings
+- API authentication tokens
+- Escalation workflow rules
+
+---
 
 ## Related Articles
 
-- Known Issues
-- Upcoming Features
+- Incident Reporting
+- Workflow Automation
+- API Authentication
+- MFA Configuration

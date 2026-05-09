@@ -4,13 +4,14 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'OpsFlow Documentation',
   tagline: 'Enterprise Workforce Operations Platform',
-  favicon: 'img/favicon.png'
+
+  favicon: 'img/favicon.png',
 
   future: {
     v4: true,
   },
 
-  url: 'https://your-site-url.com',
+  url: 'https://ops-flow-saa-s-documentation.vercel.app',
   baseUrl: '/',
 
   organizationName: 'Brock-T-Wilson',
@@ -49,10 +50,11 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/opsflow-social-card.jpg',
+    image: 'img/opsflow-logo.png',
 
     navbar: {
       title: 'OpsFlow',
+
       logo: {
         alt: 'OpsFlow Logo',
         src: 'img/opsflow-logo.png',
@@ -106,11 +108,6 @@ const config: Config = {
       ],
 
       copyright: `Copyright © ${new Date().getFullYear()} OpsFlow Documentation.`,
-    },
-
-    prism: {
-      theme: require('prism-react-renderer').themes.github,
-      darkTheme: require('prism-react-renderer').themes.dracula,
     },
   } satisfies Preset.ThemeConfig,
 };

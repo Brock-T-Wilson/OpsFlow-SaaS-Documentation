@@ -1,33 +1,104 @@
+---
+title: Upcoming Features
+---
+
 # Upcoming Features
 
-The following features are planned for future OpsFlow releases.
+The following features are currently planned or under evaluation for future OpsFlow platform releases.
 
-## Planned Improvements
+---
 
-### Dashboard Customization
+## Planned Platform Enhancements
 
-- drag-and-drop widgets
-- saved dashboard layouts
-- department-specific views
+### Advanced Workflow Analytics
 
-### Workflow Automation
+OpsFlow is evaluating expanded workflow analytics capabilities, including:
 
-- conditional workflow branching
-- advanced approval chains
-- scheduled workflow execution
+- Workflow bottleneck identification
+- SLA tracking dashboards
+- Approval duration metrics
+- Escalation performance reporting
 
-### API Platform
+### Expanded Dashboard Customization
 
-- webhook subscriptions
-- expanded reporting endpoints
+Planned dashboard enhancements include:
+
+- Custom dashboard layouts
+- Drag-and-drop widget configuration
+- Saved operational dashboard views
+- Department-specific dashboard templates
+
+### Enhanced Mobile Experience
+
+Future mobile improvements may include:
+
+- Improved responsive dashboard layouts
+- Mobile workflow approvals
+- Push notification support
+- Simplified incident submission workflows
+
+---
+
+## Planned Integration Expansions
+
+OpsFlow is currently evaluating additional enterprise integrations.
+
+### Potential Integrations
+
+- Salesforce
+- Zendesk
+- Azure Active Directory
+- PagerDuty
+- Workday
+
+---
+
+## API Platform Roadmap
+
+Planned API improvements include:
+
+- Expanded webhook event subscriptions
+- Bulk workflow management endpoints
+- Advanced filtering parameters
 - API usage analytics
+- OAuth 2.0 authentication support
 
-### Security Enhancements
+---
 
-- SSO provider integrations
-- advanced audit reporting
-- conditional access policies
+## Accessibility Roadmap
 
-## Note
+Future accessibility initiatives may include:
 
-Feature availability and release timelines may change.
+- Expanded screen reader testing
+- Improved keyboard shortcut customization
+- Additional color contrast themes
+- Accessibility preference profiles
+
+---
+
+## Security Enhancements
+
+The OpsFlow platform team is evaluating:
+
+- Device trust policies
+- Risk-based authentication workflows
+- Expanded audit logging controls
+- Session anomaly detection
+
+---
+
+## Planned Workflow Automation Enhancements
+
+Upcoming workflow automation improvements may include:
+
+- Conditional branching workflows
+- Workflow templates
+- Department-specific escalation rules
+- Automated workflow retry policies
+- Expanded approval delegation support
+
+---
+
+## Feature Availability
+
+Planned features and roadmap priorities are subject to change based on operational requirements, customer feedback, and platform scalability considerations.

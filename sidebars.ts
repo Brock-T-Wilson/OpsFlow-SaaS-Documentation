@@ -52,6 +52,19 @@ const sidebars: SidebarsConfig = {
     },
 
     {
+  type: 'category',
+  label: 'Integrations',
+  items: [
+    'integrations/slack-integration',
+    'integrations/okta-sso',
+    'integrations/webhooks',
+    'integrations/microsoft-teams',
+    'integrations/jira-integration',
+    'integrations/servicenow-integration',
+  ],
+},
+
+    {
       type: 'category',
       label: 'Administration',
       items: [
@@ -59,6 +72,7 @@ const sidebars: SidebarsConfig = {
         'administration/audit-logs',
         'administration/mfa-configuration',
         'administration/security-policies',
+        'administration/accessibility-features',
       ],
     },
 

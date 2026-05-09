@@ -3,6 +3,16 @@
 The OpsFlow dashboard provides centralized access to operational activity,
 reporting, scheduling, and workflow notifications.
 
+## Dashboard Overview
+
+
+<img
+  src="/img/dashboard-overview.png"
+  alt="OpsFlow dashboard overview showing work orders, incidents, approvals, activity, notifications, and system health"
+  width="100%"
+  style={{borderRadius: '14px', border: '1px solid #2f2a20'}}
+/>
+
 ## Dashboard Sections
 
 ### KPI Overview

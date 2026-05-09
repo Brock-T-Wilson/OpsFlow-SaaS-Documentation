@@ -43,6 +43,60 @@ Verify that all required fields are completed before submitting.
 
 Department visibility is controlled by administrator permissions.
 
+## Work Order Lifecycle Workflow
+
+The following workflow illustrates how OpsFlow routes work orders from initial submission through approval, assignment, resolution, and archival.
+
+```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#11100d",
+    "primaryColor": "#1b1813",
+    "primaryTextColor": "#f5efe3",
+    "primaryBorderColor": "#d4aa57",
+    "lineColor": "#d4aa57",
+    "secondaryColor": "#2a241a",
+    "tertiaryColor": "#11100d",
+    "fontFamily": "Inter, Arial"
+  }
+}}%%
+
+flowchart TD
+    A[Work Order Submitted] --> B[Supervisor Review]
+
+    B --> C{Priority Level}
+
+    C -->|Low Priority| D[Queue Assignment]
+    C -->|High Priority| E[Immediate Technician Dispatch]
+
+    D --> F[Technician Assignment]
+    E --> F
+
+    F --> G[Work In Progress]
+
+    G --> H{Additional Approval Required?}
+
+    H -->|Yes| I[Manager Approval]
+    H -->|No| J[Quality Assurance Review]
+
+    I --> J
+
+    J --> K{QA Passed?}
+
+    K -->|No| L[Rework Request]
+    L --> G
+
+    K -->|Yes| M[Completed]
+
+    M --> N[Archive in Audit Logs]
+
+    classDef default fill:#1b1813,stroke:#d4aa57,color:#f5efe3,stroke-width:1.5px;
+    classDef decision fill:#2a241a,stroke:#d4aa57,color:#f5efe3,stroke-width:2px;
+
+    class C,H,K decision;
+```
+
 ## Related Articles
 
 - Incident Reporting

@@ -1,35 +1,101 @@
-# Version 1.1
+---
+title: Version 1.1 Release Notes
+---
 
-Release Date: June 2026
+# Version 1.1 Release Notes
 
-## Improvements
+Release Date: March 2026
 
-### Workflow Automation Enhancements
+OpsFlow Version 1.1 introduces workflow automation enhancements, expanded integrations, accessibility improvements, and operational dashboard refinements.
 
-- Added configurable escalation timing
-- Improved approval workflow performance
-- Added notification retry handling
+---
 
-### Reporting Improvements
+## New Features
 
-- Improved dashboard loading performance
-- Added XLSX export support
-- Enhanced KPI reporting visibility
+### Accessibility Improvements
 
-### Security Updates
+- Added keyboard-accessible workflow navigation
+- Improved screen reader compatibility
+- Enhanced focus indicators across dashboard components
+- Added reduced motion support
+- Improved form validation accessibility messaging
 
-- Added backup MFA recovery codes
-- Improved session timeout enforcement
-- Enhanced audit log filtering
+### Integrations
+
+- Slack integration support
+- Microsoft Teams integration support
+- Jira synchronization workflows
+- ServiceNow incident synchronization
+- Webhook event subscriptions
+
+### Dashboard Enhancements
+
+- Improved incident severity visibility
+- Expanded work order tracking metrics
+- Faster operational dashboard rendering
+- Updated workflow monitoring widgets
+
+### Workflow Automation
+
+- Expanded approval workflow configuration
+- Conditional escalation rule support
+- Workflow retry logic improvements
+- Improved notification routing controls
+
+---
+
+## Security Enhancements
+
+- Expanded MFA policy enforcement
+- Additional audit logging visibility
+- Session timeout management improvements
+- Conditional access workflow support
+
+---
+
+## API Improvements
+
+- Improved API response consistency
+- Enhanced webhook payload validation
+- Expanded error response messaging
+- Optimized API rate limiting performance
+
+---
 
 ## Bug Fixes
 
-- Fixed delayed notification synchronization
-- Resolved duplicate escalation alerts
-- Corrected API rate limit header inconsistencies
+| Issue | Resolution |
+|---|---|
+| Delayed notification escalation timing | Resolved |
+| Incorrect dashboard workload totals | Resolved |
+| Approval workflow retry inconsistencies | Resolved |
+| Mobile navigation rendering issue | Resolved |
+
+---
+
+## Known Issues
+
+| Issue | Status |
+|---|---|
+| Large audit log exports may experience delays | Investigating |
+| Dashboard widgets may refresh slowly during high-volume activity | Monitoring |
+
+---
+
+## Upgrade Recommendations
+
+Administrators should:
+
+- Review updated workflow automation settings
+- Verify integration permissions
+- Revalidate webhook configurations
+- Test accessibility workflows after upgrading
+
+---
 
 ## Related Articles
 
+- Accessibility Features
+- Slack Integration
 - Workflow Automation
-- Security Policies
-- Reporting & Analytics
+- API Documentation

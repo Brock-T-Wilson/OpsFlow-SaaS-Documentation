@@ -1,332 +1,290 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
+
+const cardStyle = {
+  background: '#1a1814',
+  border: '1px solid #2e281f',
+  borderRadius: '16px',
+  padding: '28px',
+  transition: 'all 0.2s ease',
+  cursor: 'default',
+};
+
+function hoverProps() {
+  return {
+    onMouseEnter: (e: React.MouseEvent<HTMLElement>) => {
+      e.currentTarget.style.transform = 'translateY(-2px)';
+      e.currentTarget.style.borderColor = '#4a3f2c';
+    },
+    onMouseLeave: (e: React.MouseEvent<HTMLElement>) => {
+      e.currentTarget.style.transform = 'translateY(0)';
+      e.currentTarget.style.borderColor = '#2e281f';
+    },
+  };
+}
 
 export default function Dashboard(): JSX.Element {
   return (
     <Layout title="OpsFlow Dashboard">
       <main
         style={{
-          background: '#0f0e0b',
+          background: '#11100d',
           minHeight: '100vh',
           color: '#f5efe3',
-          padding: '48px 24px',
+          padding: '40px',
+          fontFamily: 'Inter, Arial',
         }}>
-        <section
-          style={{
-            maxWidth: '1300px',
-            margin: '0 auto',
-          }}>
+        <div style={{maxWidth: '1400px', margin: '0 auto'}}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginBottom: '40px',
+              flexWrap: 'wrap',
+              gap: '20px',
+            }}>
+            <div>
+              <h1 style={{fontSize: '48px', marginBottom: '8px'}}>
+                Operations Dashboard
+              </h1>
+              <p style={{color: '#cbbda4', margin: 0}}>
+                Last updated: 5 minutes ago
+              </p>
+            </div>
+
+            <div
+              style={{
+                background: '#1b1813',
+                border: '1px solid #d4aa57',
+                borderRadius: '16px',
+                padding: '14px 18px',
+              }}>
+              <strong style={{color: '#d4aa57'}}>System Status:</strong> All
+              Systems Operational
+            </div>
+          </div>
+
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '240px 1fr',
-              gap: '24px',
-              border: '1px solid #2f2a20',
-              borderRadius: '28px',
-              overflow: 'hidden',
-              background: '#14120f',
-              boxShadow: '0 24px 80px rgba(0,0,0,0.45)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '20px',
+              marginBottom: '32px',
             }}>
-            {/* Sidebar */}
-            <aside
-              style={{
-                background: '#11100d',
-                borderRight: '1px solid #2f2a20',
-                padding: '28px',
-              }}>
-              <h2
-                style={{
-                  color: '#d4aa57',
-                  marginTop: 0,
-                  marginBottom: '28px',
-                }}>
-                OpsFlow
+            {[
+              ['34', 'Open Work Orders'],
+              ['14', 'Critical Incidents'],
+              ['96%', 'Workflow Success Rate'],
+              ['11', 'Pending Approvals'],
+            ].map(([value, label]) => (
+              <div key={label} style={cardStyle} {...hoverProps()}>
+                <div
+                  style={{
+                    fontSize: '42px',
+                    fontWeight: 800,
+                    color: '#d4aa57',
+                    marginBottom: '10px',
+                  }}>
+                  {value}
+                </div>
+                <div style={{color: '#d8cfbd', fontSize: '16px'}}>{label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '2fr 1fr',
+              gap: '24px',
+              marginBottom: '24px',
+            }}>
+            <section style={cardStyle} {...hoverProps()}>
+              <h2 style={{marginTop: 0, marginBottom: '24px', fontSize: '28px'}}>
+                Incident Volume Trend
               </h2>
 
-              {[
-                ['Dashboard', '/dashboard'],
-                ['Work Orders', '/docs/user-guides/create-work-orders'],
-                ['Incidents', '/docs/user-guides/incident-reporting'],
-                ['Scheduling', '/docs/user-guides/shift-scheduling'],
-                ['Automation', '/docs/workflow-automation/automation-overview'],
-                ['Reports', '/docs/faq/reporting-questions'],
-                ['Admin', '/docs/administration/user-management'],
-              ].map(([item, path]) => (
-                <Link
-                  key={item}
-                  to={path}
-                  style={{
-                    textDecoration: 'none',
-                  }}>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'end',
+                  gap: '14px',
+                  height: '220px',
+                }}>
+                {[80, 120, 95, 150, 110, 170, 135].map((height, index) => (
                   <div
+                    key={index}
                     style={{
-                      padding: '12px 14px',
-                      borderRadius: '12px',
-                      marginBottom: '8px',
-                      background: 'rgba(255,255,255,0.02)',
-                      color: '#d8cfbd',
-                      fontWeight: 600,
-                      transition: 'all 0.2s ease',
-                      cursor: 'pointer',
+                      flex: 1,
+                      height: `${height}px`,
+                      background: 'linear-gradient(180deg, #d4aa57, #6f5624)',
+                      borderRadius: '10px 10px 4px 4px',
                     }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background =
-                        'rgba(212,170,87,0.14)';
-                      e.currentTarget.style.color = '#d4aa57';
-                      e.currentTarget.style.transform =
-                        'translateX(4px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background =
-                        'rgba(255,255,255,0.02)';
-                      e.currentTarget.style.color = '#d8cfbd';
-                      e.currentTarget.style.transform =
-                        'translateX(0px)';
-                    }}>
-                    {item}
-                  </div>
-                </Link>
-              ))}
-            </aside>
+                  />
+                ))}
+              </div>
 
-            {/* Main Content */}
-            <section
-              style={{
-                padding: '28px',
-              }}>
               <div
                 style={{
                   display: 'flex',
                   justifyContent: 'space-between',
-                  alignItems: 'center',
-                  gap: '20px',
-                  marginBottom: '28px',
+                  color: '#bba98d',
+                  fontSize: '13px',
+                  marginTop: '12px',
                 }}>
-                <div>
-                  <h1
-                    style={{
-                      margin: 0,
-                      fontSize: '36px',
-                    }}>
-                    Operations Dashboard
-                  </h1>
-
-                  <p
-                    style={{
-                      color: '#d8cfbd',
-                      marginTop: '12px',
-                    }}>
-                    Monitor operational workflows, incidents, staffing,
-                    and approvals across the organization.
-                  </p>
-                </div>
-
-                <Link
-                  to="/docs/user-guides/create-work-orders"
-                  style={{
-                    background: '#d4aa57',
-                    color: '#11100d',
-                    padding: '14px 20px',
-                    borderRadius: '12px',
-                    fontWeight: 800,
-                    textDecoration: 'none',
-                  }}>
-                  Create Work Order
-                </Link>
-              </div>
-
-              {/* Stats */}
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns:
-                    'repeat(auto-fit, minmax(180px, 1fr))',
-                  gap: '16px',
-                  marginBottom: '24px',
-                }}>
-                {[
-                  ['42', 'Open Work Orders'],
-                  ['8', 'Active Incidents'],
-                  ['96%', 'Staffing Coverage'],
-                  ['14', 'Pending Approvals'],
-                ].map(([value, label]) => (
-                  <div
-                    key={label}
-                    style={{
-                      background: '#1b1813',
-                      border: '1px solid #332d22',
-                      borderRadius: '18px',
-                      padding: '22px',
-                    }}>
-                    <div
-                      style={{
-                        fontSize: '34px',
-                        fontWeight: 800,
-                        color: '#d4aa57',
-                        marginBottom: '8px',
-                      }}>
-                      {value}
-                    </div>
-
-                    <div
-                      style={{
-                        color: '#d8cfbd',
-                      }}>
-                      {label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Charts */}
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '1.4fr 1fr',
-                  gap: '20px',
-                  marginBottom: '24px',
-                }}>
-                <div
-                  style={{
-                    background: '#1b1813',
-                    border: '1px solid #332d22',
-                    borderRadius: '20px',
-                    padding: '24px',
-                  }}>
-                  <h2
-                    style={{
-                      marginTop: 0,
-                    }}>
-                    Work Order Activity
-                  </h2>
-
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'end',
-                      gap: '12px',
-                      height: '180px',
-                    }}>
-                    {[40, 70, 55, 90, 65, 110, 85].map(
-                      (height, index) => (
-                        <div
-                          key={index}
-                          style={{
-                            flex: 1,
-                            height: `${height}px`,
-                            background:
-                              'linear-gradient(180deg, #d4aa57, #6f5624)',
-                            borderRadius: '10px 10px 4px 4px',
-                          }}
-                        />
-                      ),
-                    )}
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    background: '#1b1813',
-                    border: '1px solid #332d22',
-                    borderRadius: '20px',
-                    padding: '24px',
-                  }}>
-                  <h2
-                    style={{
-                      marginTop: 0,
-                    }}>
-                    Incident Severity
-                  </h2>
-
-                  {[
-                    ['Critical', '2'],
-                    ['High', '6'],
-                    ['Medium', '12'],
-                    ['Low', '18'],
-                  ].map(([label, value]) => (
-                    <div
-                      key={label}
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        borderBottom: '1px solid #332d22',
-                        padding: '12px 0',
-                      }}>
-                      <span>{label}</span>
-
-                      <strong
-                        style={{
-                          color: '#d4aa57',
-                        }}>
-                        {value}
-                      </strong>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Table */}
-              <div
-                style={{
-                  background: '#1b1813',
-                  border: '1px solid #332d22',
-                  borderRadius: '20px',
-                  padding: '24px',
-                }}>
-                <h2
-                  style={{
-                    marginTop: 0,
-                  }}>
-                  Recent Work Orders
-                </h2>
-
-                <div
-                  style={{
-                    display: 'grid',
-                    gap: '12px',
-                  }}>
-                  {[
-                    ['WO-1042', 'Maintenance', 'High', 'Open'],
-                    ['WO-1043', 'Logistics', 'Medium', 'In Review'],
-                    ['WO-1044', 'Operations', 'Critical', 'Escalated'],
-                    ['WO-1045', 'Safety', 'Low', 'Scheduled'],
-                  ].map(([id, dept, priority, status]) => (
-                    <div
-                      key={id}
-                      style={{
-                        display: 'grid',
-                        gridTemplateColumns:
-                          '1fr 1fr 1fr 1fr',
-                        gap: '16px',
-                        padding: '14px',
-                        borderRadius: '12px',
-                        background: '#14120f',
-                        color: '#d8cfbd',
-                      }}>
-                      <strong
-                        style={{
-                          color: '#f5efe3',
-                        }}>
-                        {id}
-                      </strong>
-
-                      <span>{dept}</span>
-                      <span>{priority}</span>
-
-                      <span
-                        style={{
-                          color: '#d4aa57',
-                        }}>
-                        {status}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(
+                  (day) => (
+                    <span key={day}>{day}</span>
+                  ),
+                )}
               </div>
             </section>
+
+            <section style={cardStyle} {...hoverProps()}>
+              <h2 style={{marginTop: 0, marginBottom: '24px', fontSize: '28px'}}>
+                Work Order Status
+              </h2>
+
+              {[
+                ['Open', '34'],
+                ['In Progress', '25'],
+                ['Delayed', '9'],
+                ['Completed', '48'],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    padding: '14px 0',
+                    borderBottom: '1px solid #2e281f',
+                  }}>
+                  <span>{label}</span>
+                  <strong style={{color: '#d4aa57'}}>{value}</strong>
+                </div>
+              ))}
+            </section>
           </div>
-        </section>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '2fr 1fr',
+              gap: '24px',
+              marginBottom: '24px',
+            }}>
+            <section style={cardStyle} {...hoverProps()}>
+              <h2 style={{marginTop: 0, marginBottom: '24px', fontSize: '28px'}}>
+                Operational Activity
+              </h2>
+
+              {[
+                ['Critical incident escalated', 'Manufacturing Operations', '2 minutes ago'],
+                ['Approval workflow completed', 'Scheduling Department', '12 minutes ago'],
+                ['MFA policy updated', 'Security Administration', '27 minutes ago'],
+                ['Work order assigned', 'Maintenance Team', '41 minutes ago'],
+              ].map(([title, dept, time]) => (
+                <div
+                  key={title}
+                  style={{
+                    padding: '18px 0',
+                    borderBottom: '1px solid #2e281f',
+                  }}>
+                  <div style={{fontWeight: 700, marginBottom: '6px'}}>
+                    {title}
+                  </div>
+                  <div style={{color: '#bba98d', fontSize: '14px'}}>
+                    {dept} • {time}
+                  </div>
+                </div>
+              ))}
+            </section>
+
+            <section style={cardStyle} {...hoverProps()}>
+              <h2 style={{marginTop: 0, marginBottom: '24px', fontSize: '28px'}}>
+                Notifications
+              </h2>
+
+              {[
+                '11 pending approval requests',
+                'Critical incident requires review',
+                'Workflow retry exceeded threshold',
+                'API response delay detected',
+              ].map((alert) => (
+                <div
+                  key={alert}
+                  style={{
+                    background: '#211d16',
+                    border: '1px solid #3d3426',
+                    borderRadius: '12px',
+                    padding: '14px',
+                    marginBottom: '14px',
+                    color: '#e7dcc9',
+                  }}>
+                  {alert}
+                </div>
+              ))}
+            </section>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '24px',
+            }}>
+            <section style={cardStyle} {...hoverProps()}>
+              <h2 style={{marginTop: 0, marginBottom: '24px', fontSize: '28px'}}>
+                System Health
+              </h2>
+
+              {[
+                ['Workflow Engine', 'Operational'],
+                ['Notification Services', 'Operational'],
+                ['API Gateway', 'Operational'],
+                ['Database Cluster', 'Healthy'],
+              ].map(([service, status]) => (
+                <div
+                  key={service}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    padding: '14px 0',
+                    borderBottom: '1px solid #2e281f',
+                  }}>
+                  <span>{service}</span>
+                  <span style={{color: '#d4aa57', fontWeight: 700}}>
+                    {status}
+                  </span>
+                </div>
+              ))}
+            </section>
+
+            <section style={cardStyle} {...hoverProps()}>
+              <h2 style={{marginTop: 0, marginBottom: '24px', fontSize: '28px'}}>
+                Audit Activity
+              </h2>
+
+              {[
+                'Administrator permissions modified',
+                'SSO configuration updated',
+                'Escalation workflow edited',
+                'Security policy revision published',
+              ].map((log) => (
+                <div
+                  key={log}
+                  style={{
+                    padding: '16px 0',
+                    borderBottom: '1px solid #2e281f',
+                    color: '#d8cfbd',
+                  }}>
+                  {log}
+                </div>
+              ))}
+            </section>
+          </div>
+        </div>
       </main>
     </Layout>
   );
