@@ -6,7 +6,6 @@
 
   --ifm-font-color-base: #f5efe3;
   --ifm-heading-color: #ffffff;
-
   --ifm-link-color: #d4aa57;
 
   --ifm-code-font-size: 95%;
@@ -34,6 +33,28 @@ body {
   border-bottom: 1px solid #2c271f;
 }
 
+.navbar__title {
+  color: #d4aa57 !important;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.navbar__item,
+.navbar__link {
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: #d4aa57 !important;
+}
+
+.navbar__link--active {
+  color: #d4aa57 !important;
+}
+
 .footer {
   border-top: 1px solid #2c271f;
 }
@@ -45,15 +66,22 @@ body {
 
 .menu__link {
   border-radius: 10px;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
 .menu__link:hover {
-  background: rgba(212, 170, 87, 0.08);
+  transform: translateX(4px);
+  background: rgba(212, 170, 87, 0.12);
+  color: #d4aa57 !important;
 }
 
 .menu__link--active {
+  background: rgba(212, 170, 87, 0.16);
   color: #d4aa57 !important;
-  background: rgba(212, 170, 87, 0.12);
+  font-weight: 700;
 }
 
 .theme-doc-sidebar-container {
@@ -80,9 +108,22 @@ body {
   font-size: 16px;
 }
 
+.theme-doc-markdown a {
+  transition: color 0.2s ease;
+}
+
+.theme-doc-markdown a:hover {
+  color: #d4aa57 !important;
+}
+
 table {
   border-radius: 12px;
   overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+table:hover {
+  border-color: #4a3f2c;
 }
 
 thead {
@@ -96,126 +137,30 @@ code {
 .alert {
   border-radius: 12px;
 }
-/* Sidebar hover polish */
-.menu__link {
-  border-radius: 10px;
-  transition: all 0.2s ease;
+
+.theme-code-block {
+  transition: border-color 0.2s ease;
 }
 
-.menu__link:hover {
-  background: rgba(212, 170, 87, 0.12);
-  color: #d4aa57 !important;
-  transform: translateX(4px);
+.theme-code-block:hover {
+  border-color: #4a3f2c;
 }
 
-.menu__link--active {
-  background: rgba(212, 170, 87, 0.16);
-  color: #d4aa57 !important;
-  font-weight: 700;
-}
-
-/* Navbar hover polish */
-.navbar__item,
-.navbar__link {
-  transition: all 0.2s ease;
-}
-
-.navbar__link:hover {
-  color: #d4aa57 !important;
-}
-
-/* Documentation page link hover */
-.theme-doc-markdown a {
-  transition: color 0.2s ease;
-}
-
-.theme-doc-markdown a:hover {
-  color: #d4aa57 !important;
-}
-
-/* Buttons hover polish */
 .button,
 a[role='button'] {
-  transition: all 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .button:hover,
 a[role='button']:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(212, 170, 87, 0.18);
 }
-
-/* Code block / table polish */
-.theme-code-block,
-table {
-  transition: all 0.2s ease;
-}
-
-.theme-code-block:hover,
-table:hover {
-  border-color: #4a3f2c;
-}
-/* Global interactive hover polish */
-
-a,
-button,
-.card,
-.pagination-nav__link,
-.menu__link,
-.navbar__link {
-  transition:
-    transform 0.2s ease,
-    color 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-/* Clickable hover animation */
-
-a:hover,
-button:hover,
-.pagination-nav__link:hover,
-.navbar__link:hover {
-  transform: translateY(-2px);
-}
-
-/* Sidebar hover */
-
-.menu__link:hover {
-  transform: translateX(4px);
-  background: rgba(212, 170, 87, 0.12);
-  color: #d4aa57 !important;
-}
-
-/* Card hover */
 
 .card:hover,
 article:hover {
   border-color: #4a3f2c !important;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
-}
-
-/* Documentation links */
-
-.theme-doc-markdown a:hover {
-  color: #d4aa57 !important;
-}
-
-/* Navbar active state */
-
-.navbar__link--active {
-  color: #d4aa57 !important;
-}
-
-/* Buttons */
-
-.button:hover,
-a[role='button']:hover {
-  box-shadow: 0 4px 16px rgba(212, 170, 87, 0.18);
-}
-
-/* Tables */
-
-table:hover {
-  border-color: #4a3f2c;
 }
