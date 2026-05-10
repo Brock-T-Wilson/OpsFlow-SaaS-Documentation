@@ -62,7 +62,7 @@ const config: Config = {
 
       items: [
         {
-          to: 'docSidebar',
+          to: '/docs/introduction/welcome',
           label: 'Documentation',
           position: 'left',
         },
